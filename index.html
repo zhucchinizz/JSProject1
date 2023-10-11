@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Count De Money</title>
 </head>
 
-<body>
+<body onload="init();">
     
     <table>
         <tr>
@@ -18,10 +19,22 @@
           <th>Quarters</th>
         </tr>
         <tr>
-          <td><button class="button">Pennies</button></td>
-          <td><button>Nickels</button></td>
-          <td><button>Dimes</button></td>
-          <td><button>Quarters</button></td>
+          <td><button onclick="add(pennies);">Add Pennies</button></td>
+          <td><button onclick="add(nickels);" >Add Nickels</button></td>
+          <td><button onclick="add(dimes)">Add Dimes</button></td>
+          <td><button onclick="add(quarters)">Add Quarters</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="subtract(pennies);">Subtract Pennies</button> </td>
+          <td><button onclick="subtract(nickels);">Subtract Nickels</button> </td>
+          <td><button onclick="subtract(dimes);">Subtract Dimes</button> </td>
+          <td><button onclick="subtract(quarters);">Subtract Quarters</button> </td>
+        </tr>
+        <tr>
+          <td>Total Value: </td>
+          <td>Total Value:</td>
+          <td>Total Value:</td>
+          <td>Total Value:</td>
         </tr>
       </table>
 </body>
