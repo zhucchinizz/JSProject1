@@ -1,34 +1,64 @@
 function init(){
-    var pennies = 0;
-    var nickels = 0;
-    var dimes = 0;
-    var quarters = 0;
+    pennynum = 0;
+    pennies=document.getElementById('sump');
+    nickelnum = 0;
+    nickels=document.getElementById('sumn');
+    dimenum = 0;
+    dimes=document.getElementById('sumd');
+    quarternum = 0;
+    quarters=document.getElementById('sumq');
+    money=0;
+    money=document.getElementById('sum');
+    valuep=document.getElementById('pvalue')
+    valuen=document.getElementById('nvalue')
+    valued=document.getElementById('dvalue')
+    valueq=document.getElementById('qvalue')
+    dipslay();
 }
 function add(text){
-    if(text==quarters){
-        quarters++;
+    if(text=='quarters'){
+        quarternum++;
     }
-    if(text==dimes){
-        dimes++;
+    if(text=='dimes'){
+        dimenum++;
     }
-    if(text==nickels){
-        nickels++;
+    if(text=='nickels'){
+        nickelnum++;
     }
-    if(text==pennies){
-        pennies++;
+    if(text=='pennies'){
+        pennynum++;
     }
-    function subtract(text){
-        if(text==quarters){
-            quarters--;
-        }
-        if(text==dimes){
-            dimes--;
-        }
-        if(text==nickels){
-            nickels--;
-        }
-        if(text==pennies){
-            pennies--;
-        }
-    }
+    dipslay();
 }
+function subtract(text){
+
+    if(text=='quarters' && quarternum>0){
+            quarternum--;
+     }
+    if(text=='dimes' && dimenum>0){
+        dimenum--;
+    }
+     if(text=='nickels' && nickelnum>0){
+        nickelnum--;
+    }
+     if(text=='pennies' && pennynum>0){
+        pennynum--;
+    }
+    dipslay();
+    }
+
+
+function dipslay(){
+    total=pennynum+(5*nickelnum)+(10*dimenum)+(25*quarternum);
+    pennies.innerHTML=pennynum;
+    nickels.innerHTML=nickelnum;
+    dimes.innerHTML=dimenum;
+    quarters.innerHTML=quarternum;
+    money.innerHTML=total;
+    valuep.innerHTML=pennynum;
+    valuen.innerHTML=nickelnum*5;
+    valued.innerHTML=dimenum*10;
+    valueq.innerHTML=quarternum*25;
+}
+
+sum.textContent='Total: ${total}';
